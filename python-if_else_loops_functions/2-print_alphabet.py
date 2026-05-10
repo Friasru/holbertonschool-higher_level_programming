@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print(string.ascii_lowercase)
+for i in range(26):
+    print("{:c}".format(ord('a') + i), end="")
