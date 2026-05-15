@@ -2,7 +2,7 @@
 def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return 0
-    
+
     roman_values = {
         'I': 1,
         'V': 5,
@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
         'D': 500,
         'M': 1000,
     }
-    
+
     total = 0
     for i in range(len(roman_string)):
         if i + 1 < len(roman_string) and roman_values[roman_string[i]] < roman_values[roman_string[i + 1]]:
