@@ -1,0 +1,35 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test with two names:
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+Test with one name:
+>>> say_my_name("Bob")
+My name is Bob 
+
+Test with another pair:
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+Test with invalid first_name (integer):
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+Test with invalid last_name (integer):
+>>> say_my_name("John", 123)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+Test with None as first_name:
+>>> say_my_name(None, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+Test with empty string first_name (should work):
+>>> say_my_name("", "Smith")
+My name is  Smith
