@@ -52,7 +52,7 @@ Text ending without delimiter:
 >>> text_indentation("Hello World!")
 Hello World!
 
-Spaces at beginning of text are preserved:
+Spaces at beginning of text are stripped:
 >>> text_indentation("   Hello.")
 Hello.
 <BLANKLINE>
