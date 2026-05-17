@@ -1,0 +1,87 @@
+Import the function:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Single period:
+>>> text_indentation("Hello.")
+Hello.
+<BLANKLINE>
+
+Single question mark:
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
+
+Single colon:
+>>> text_indentation("Hello:")
+Hello:
+<BLANKLINE>
+
+Multiple delimiters:
+>>> text_indentation("Hello? World.")
+Hello?
+<BLANKLINE>
+World.
+<BLANKLINE>
+
+All three delimiters:
+>>> text_indentation("Hi: there. How? Good.")
+Hi:
+<BLANKLINE>
+there.
+<BLANKLINE>
+How?
+<BLANKLINE>
+Good.
+<BLANKLINE>
+
+Spaces after delimiter are stripped from next line:
+>>> text_indentation("Hello.   World.")
+Hello.
+<BLANKLINE>
+World.
+<BLANKLINE>
+
+No delimiter (no extra newlines):
+>>> text_indentation("Hello World")
+Hello World
+
+Empty string:
+>>> text_indentation("")
+
+Text ending without delimiter:
+>>> text_indentation("Hello World!")
+Hello World!
+
+Spaces at beginning of text are preserved:
+>>> text_indentation("   Hello.")
+Hello.
+<BLANKLINE>
+
+Integer:
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Float:
+>>> text_indentation(3.14)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+None:
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+List:
+>>> text_indentation(["Hello."])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
