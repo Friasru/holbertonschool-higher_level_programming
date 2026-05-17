@@ -2,6 +2,8 @@
 """
 This module provides a function to add two integers with type validation.
 """
+
+
 def add_integer(a, b=98):
     """
     Returns the sum of a and b conversion and validation.
