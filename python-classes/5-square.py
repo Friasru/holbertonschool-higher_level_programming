@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for a square class with printing capability"""
 
+
 class Square:
     """A square defined by its size with area and printing"""
     def __init__(self, size):
