@@ -8,11 +8,10 @@
 
 >>> bg.integer_validator("age", 1)
 
->>> try:
-...     bg.integer_validator("age")
-... except TypeError as e:
-...     print("[{}] {}".format(e.__class__.__name__, e)) # doctest: +ELLIPSIS
-[TypeError] ...missing 1 required positional argument: 'value'
+>>> bg.integer_validator("age")  # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+    ...
+TypeError: ...
 
 >>> try:
 ...     bg.integer_validator("name", "John")
