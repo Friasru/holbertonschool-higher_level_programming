@@ -37,6 +37,24 @@
 [TypeError] bool_val must be an integer
 
 >>> try:
+...     bg.integer_validator("name", (3,))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+>>> try:
+...     bg.integer_validator("name", [3])
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+>>> try:
+...     bg.integer_validator("name", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+>>> try:
 ...     bg.area()
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
