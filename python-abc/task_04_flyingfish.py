@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+"""Module for multiple inheritance with FlyingFish"""
+
+
+class Fish:
+    """Class representing a Fish"""
+    def swim(self):
+        print("The fish is swimming")
+
+    def habitat(self):
+        print("The fish lives in water")
+
+class Bird:
+    """Class representing a bird"""
+    def fly(self):
+        print("THe bird is flying")
+
+    def habitat(self):
+        print("The bird lives in the sky")
+
+class FlyingFish(Fish, Bird):
+    def swim(self):
+        print("The flying fish is swimming!")
+
+    def fly(self):
+        print("The flying fish is soaring!")
+
+    def habitat(self):
+        print("The flying fhish lives both in the water and the sky!")
