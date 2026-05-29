@@ -13,7 +13,7 @@ class Fish:
 class Bird:
     """Class representing a bird"""
     def fly(self):
-        print("THe bird is flying")
+        print("The bird is flying")
 
     def habitat(self):
         print("The bird lives in the sky")
@@ -26,4 +26,4 @@ class FlyingFish(Fish, Bird):
         print("The flying fish is soaring!")
 
     def habitat(self):
-        print("The flying fhish lives both in the water and the sky!")
+        print("The flying fish lives both in water and the sky!")
