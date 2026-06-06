@@ -10,4 +10,7 @@ class Student:
         self.age = age
 
 def to_json(self):
-    return self.__dict__
+    result = ""
+    for key, value in self.__dict__.items():
+        result += "{} => {} /".format(key, value)
+    return result
