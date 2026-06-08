@@ -3,7 +3,7 @@
 import xml.etree.ElementTree as ET
 
 
-def sterialize_to_xml(dictionary, filename):
+def serialize_to_xml(dictionary, filename):
     """Serialize a python dictionary"""
     try:
         root = ET.Element("data")
