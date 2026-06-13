@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -45,7 +45,7 @@ def handle_needs_fresh_token_error(err):
 @app.route('/basic-protected', methods=['GET'])
 @auth.login_required
 def basic_protected():
-    return jsonify({"message": "Basic Auth: Access Granted"}), 200
+    return "Basic Auth: Access Granted", 200
 
 
 @app.route('/login', methods=['POST'])
@@ -72,23 +72,21 @@ def login():
 @app.route('/jwt-protected', methods=['GET'])
 @jwt_required()
 def jwt_protected():
-    current_user = get_jwt_identity()
-    return jsonify({"message": "JWT Auth: Access Granted"}), 200
+    return "JWT Auth: Access Granted", 200
 
 
 @app.route('/admin-only', methods=['GET'])
 @jwt_required()
 def admin_only():
-    current_user = get_jwt_identity()
-    claims = get_jwt_identity()
+    claims = get_jwt()
 
     from flask_jwt_extended import get_jwt
     claims = get_jwt()
     
     if claims.get('role') != 'admin':
-        return jsonify({"error": "Admin access required"}), 403
+        return "Admin access required", 403
     
-    return jsonify({"message": "Admin Access: Granted"}), 200
+    return "Admin Access: Granted", 200
 
 if __name__ == '__main__':
     app.run(debug=True)
