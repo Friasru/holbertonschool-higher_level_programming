@@ -81,8 +81,10 @@ def admin_only():
     user_claims = get_jwt()
     
     if user_claims.get('role') != 'admin':
-        return "Admin access required", 403
-    
+        response = jsonify({"error": "Admin access required"})
+        response.status_code = 403
+    return response
+
     return "Admin Access: Granted", 200
 
 if __name__ == '__main__':
