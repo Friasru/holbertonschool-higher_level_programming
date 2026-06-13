@@ -83,7 +83,7 @@ def admin_only():
     if user_claims.get('role') != 'admin':
         response = jsonify({"error": "Admin access required"})
         response.status_code = 403
-    return response
+        return response
 
     return "Admin Access: Granted", 200
 
