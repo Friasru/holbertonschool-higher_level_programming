@@ -1,4 +1,0 @@
-# SQL - Introduction
-
-## Overview
-- SQL
