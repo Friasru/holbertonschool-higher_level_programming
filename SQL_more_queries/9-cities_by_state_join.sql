@@ -1,2 +1,2 @@
 -- Lists all cities from the database with their corresponding state names
-SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.state_id = state_id ORDER BY cities.id ASC;
+SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.state_id = states_id ORDER BY cities.id ASC;
