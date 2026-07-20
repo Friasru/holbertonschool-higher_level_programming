@@ -40,7 +40,7 @@ def generate_invitations(template, attendees):
 
                 output_content = output_content.replace(f"{{{placeholder}}}", str(value))
 
-            output_filename = f"output{index}".txt
+            output_filename = f"output_{index}".txt
             try:
                 with open(output_filename, 'w') as file:
                     file.write(output_content)
