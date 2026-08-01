@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script to fetch and display all State objects from the hbtn_0e_6_usa database
 """

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script to filter and display states by name from the hbtn_0e_0_usa database
 """

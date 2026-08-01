@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script to list all states with a name starting with 'N' from the hbtn_0e_0_usa database
 """
@@ -29,4 +29,3 @@ if __name__ == "__main__":
     
     cursor.close()
     db.close()
-    

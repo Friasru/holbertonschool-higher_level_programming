@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script to list all cities of a specific state from the hbtn_0e_4_usa database
 """
