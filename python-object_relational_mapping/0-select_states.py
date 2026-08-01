@@ -1,8 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Script to list all states from the hbtn_0e_0_usa database
 """
-import pymysql
+import MySQLdb
 import sys
 
 if __name__ == "__main__":
@@ -10,7 +10,7 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
     
-    db = pymysql.connect(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=mysql_user,
