@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Print all City objects with their State name."""
+"""Lists all City objects grouped by State."""
 
 import sys
 from sqlalchemy import create_engine
@@ -21,12 +21,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    results = session.query(State.name, City.id, City.name) \
-        .join(City, State.id == City.state_id) \
-        .order_by(City.id) \
+    results = session.query(State, City)\
+        .join(City, State.id == City.state_id)\
+        .order_by(City.id)\
         .all()
 
-    for state_name, city_id, city_name in results:
-        print(f"{state_name}: ({city_id}) {city_name}")
+    for state, city in results:
+        print(f"{state.name}: ({city.id}) {city.name}")
 
     session.close()

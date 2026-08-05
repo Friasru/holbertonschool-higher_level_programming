@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Update State with id=2 to New Mexico."""
+"""Changes the name of a State object where id = 2."""
 
 import sys
 from sqlalchemy import create_engine
@@ -21,6 +21,7 @@ if __name__ == "__main__":
     session = Session()
 
     state = session.query(State).filter(State.id == 2).first()
+
     if state:
         state.name = "New Mexico"
         session.commit()
