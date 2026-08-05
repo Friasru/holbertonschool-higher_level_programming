@@ -1,32 +1,28 @@
 #!/usr/bin/python3
-"""
-Script to safely filter and display states by name from the hbtn_0e_0_usa database
-"""
+"""Lists states safely (prevents SQL injection)."""
+
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
-    mysql_user = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name = sys.argv[4]
 
+if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=mysql_user,
-        passwd=mysql_password,
-        db=database_name
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (state_name,))
+    cursor.execute(
+        "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
+        (sys.argv[4],)
+    )
 
-    states = cursor.fetchall()
-
-    for state in states:
-        print(state)
+    for row in cursor.fetchall():
+        print(row)
 
     cursor.close()
     db.close()
